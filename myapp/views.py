@@ -47,9 +47,20 @@ def show(request):
     persons=[person1,person2,person3]
     
     #TODO 9*9 multiplication table
+    row_list = []
     for i in range(1,10):
+        col_list = []
         for j in range(1,10):
-            print(f'{j} X {i} = {j*i}')
-        print('')
+            col_list.append(f'{j} X {i} = {j*i}')
+        row_list.append(col_list)
 
     return render(request,"show.html",locals())
+
+def filter(request):
+    value=4
+    list1=[1,2,3]
+    pw="芝麻開門"
+    
+    html="<h1>Hello</h1>"
+    value2=False
+    return render(request,"filter.html",locals()) 

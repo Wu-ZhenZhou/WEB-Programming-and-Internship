@@ -26,7 +26,15 @@
 
 
     <table style="width:100%">
-        <tr></tr>
+    {% for r in row_list%}
+        <tr>
+            {% for c in r%}
+            <td> 
+                {{c}}
+            </td>
+            {% endfor %} 
+        </tr>
+    {% endfor %} 
     </table>
 
     
