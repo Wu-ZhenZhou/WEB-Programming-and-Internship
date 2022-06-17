@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 import random
+from myapp.models import student
 
 # Create your views here.
 def sayhello(request):
@@ -64,3 +65,21 @@ def filter(request):
     html="<h1>Hello</h1>"
     value2=False
     return render(request,"filter.html",locals()) 
+
+def listone(request):
+    try:
+        unit = student.objects.get(cName='吳鎮州') #讀取一筆資料
+        print('student.objects.get', type(unit))
+    except:
+        errormessage = " (讀取錯誤!)"
+    return render(request, "listone.html", locals())
+
+def listall(request):
+    students = student.objects.all().order_by('id')  #讀取資料表, 依 id 遞增排序
+    print('student.objects.all()', type(students))
+    return render(request, "listall.html", locals())
+
+def finaltest(request):
+    students = student.objects.all().order_by('cLine1')  #讀取資料表, 依 id 遞增排序
+    print('student.objects.all()', type(students))
+    return render(request, "listall.html", locals())
