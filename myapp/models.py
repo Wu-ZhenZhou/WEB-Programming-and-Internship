@@ -7,8 +7,8 @@ class student(models.Model):
     cEmail = models.EmailField(max_length=100, blank=True, default='')
     cPhone = models.CharField(max_length=50, blank=True, default='')
     cAddr = models.CharField(max_length=255, blank=True, default='')
-    cLine1 = models.CharField(max_length=255, blank=True, default='')
-
+    cHeight = models.IntegerField(blank=True, default='')
+    cWeight = models.IntegerField(blank=True, default='')
     #新增資料欄先刪_pycache_
     #於db 執行SQL輸入CREATE TABLE "myApp_student" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "cName" varchar(20) NULL, "cAddr" varchar(255) NOT NULL, "cBirthday" date NOT NULL, "cEmail" varchar(100) NOT NULL, "cPhone" varchar(50) NOT NULL, "cSex" varchar(2) NOT NULL)
     

@@ -80,6 +80,6 @@ def listall(request):
     return render(request, "listall.html", locals())
 
 def finaltest(request):
-    students = student.objects.all().order_by('cLine1')  #讀取資料表, 依 id 遞增排序
+    students = student.objects.all().order_by('cHeight')  #讀取資料表, 依 id 遞增排序
     print('student.objects.all()', type(students))
     return render(request, "listall.html", locals())
